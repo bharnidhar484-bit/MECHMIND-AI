@@ -8,206 +8,220 @@ app_port: 8501
 pinned: false
 ---
 
-# 🤖 MechMind AI — Intelligent Mechanical Engineering Assistant
+# MechMind AI
 
-<div align="center">
+<p align="center">
+  <strong>Domain-focused AI assistant for mechanical engineering learning, revision, and problem solving.</strong>
+</p>
 
-<!-- Reminder: replace YOUR_USERNAME and badge/demo links before publishing to Hugging Face Spaces. -->
-[![Open in Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-xl.svg)](https://huggingface.co/spaces/YOUR_USERNAME/mechmind-ai)
+<p align="center">
+  <a href="https://github.com/bharnidhar484-bit/MECHMIND-AI">GitHub Repository</a>
+  |
+  <a href="https://huggingface.co/spaces/YOUR_USERNAME/mechmind-ai">Hugging Face Space</a>
+</p>
 
-**An AI-powered chatbot that bridges Mechanical Engineering and Artificial Intelligence**
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.11-blue?style=flat-square&logo=python" alt="Python 3.11">
+  <img src="https://img.shields.io/badge/Streamlit-1.54.0-FF4B4B?style=flat-square&logo=streamlit" alt="Streamlit 1.54.0">
+  <img src="https://img.shields.io/badge/Gemini-Flash_API-4285F4?style=flat-square&logo=google" alt="Gemini Flash API">
+  <img src="https://img.shields.io/badge/Deployment-Hugging_Face_Spaces-FCC624?style=flat-square" alt="Hugging Face Spaces">
+  <img src="https://img.shields.io/badge/Status-In_Development-orange?style=flat-square" alt="In Development">
+</p>
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat-square&logo=python)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.32-red?style=flat-square&logo=streamlit)
-![Gemini](https://img.shields.io/badge/Gemini_API-Free-green?style=flat-square&logo=google)
-![Hosted](https://img.shields.io/badge/Hosted_on-HuggingFace-yellow?style=flat-square)
-![Cost](https://img.shields.io/badge/Cost-₹0_Free-brightgreen?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square)
+<!-- Update the Hugging Face Space URL after the first deployment. -->
 
-</div>
+## Overview
 
----
+MechMind AI is a Streamlit-based chatbot built for mechanical engineering students and early-career engineers. It uses the Gemini API to answer questions across thermodynamics, fluid mechanics, machine design, manufacturing, materials, and AI applications in mechanical engineering. The application is intentionally scoped to this domain so that responses stay relevant, structured, and academically useful.
 
-## 🚀 Live Demo
+## Why This Project Exists
 
-> **Click the button above** or go to:  
-> 👉 `https://huggingface.co/spaces/YOUR_USERNAME/mechmind-ai`
+Mechanical engineering students often need fast help with concept revision, derivations, problem breakdowns, material selection logic, and engineering applications of AI. General-purpose chatbots can answer these questions, but they are not always focused. MechMind AI narrows the problem space to deliver a cleaner academic assistant that is easier to use, cheaper to deploy, and simpler to maintain.
 
-No installation. No signup. Just open and ask your question.
+## Core Capabilities
 
----
+- Answers only within the defined mechanical engineering scope
+- Maintains chat history during the active Streamlit session
+- Provides a clean chat interface with sidebar guidance and example questions
+- Shows user-friendly messages for API, model, quota, and connectivity issues
+- Reads secrets from environment variables, which makes it ready for Hugging Face Spaces
+- Includes a lightweight Gemini smoke test script for setup verification
 
-## 📌 About the Project
+## Supported Scope
 
-**MechMind AI** is a domain-specific AI chatbot built for mechanical engineering students and professionals. It uses Google's **Gemini API** (free tier) as the AI brain and **Streamlit** as the web interface, deployed live on **Hugging Face Spaces** — completely free.
-
-The chatbot can:
-- Explain any mechanical engineering concept in simple terms
-- Solve numerical problems step-by-step with formulas
-- Recommend materials based on engineering conditions
-- Answer questions about **AI in Mechanical Engineering** (predictive maintenance, generative design, digital twins)
-- Help with exam preparation (thermodynamics, fluid mechanics, machine design, and more)
-
----
-
-## 🧠 Topics Covered
-
-| Mechanical Engineering | AI in Mech Engineering |
+| Area | Coverage |
 |---|---|
-| Thermodynamics & Heat Transfer | Predictive Maintenance (ML) |
-| Fluid Mechanics | Generative Design (AI-CAD) |
-| Machine Design & Analysis | Digital Twins |
-| Manufacturing Processes | Smart Manufacturing / Industry 4.0 |
-| Material Science & Selection | Robotic Process Automation |
-| Engineering Mechanics | Computer Vision in Quality Control |
+| Thermodynamics | laws, cycles, entropy, efficiency, energy balances |
+| Heat transfer | conduction, convection, radiation, heat exchangers |
+| Fluid mechanics | Bernoulli, continuity, Reynolds number, flow behavior |
+| Machine design | shafts, gears, bearings, springs, factor of safety |
+| Mechanics of materials | stress, strain, bending, torsion, failure criteria |
+| Manufacturing | casting, machining, welding, forming, additive methods |
+| Materials science | selection, fatigue, corrosion, fracture, high-temperature behavior |
+| AI in mechanical engineering | predictive maintenance, digital twins, smart manufacturing, generative design |
 
----
+## What The App Looks Like
 
-## 📥 Input / Output
+The current UI includes:
 
-| Input (What you ask) | Output (What MechMind returns) |
-|---|---|
-| "Explain Bernoulli's theorem" | Concept explanation + derivation + real-world use |
-| "Gear ratio: input 1200rpm, output 300rpm" | Step-by-step solution: GR = 4:1 |
-| "Best material for high-temperature turbine blades?" | Recommends Inconel / Ti alloys with reasoning |
-| "How does ML help in predictive maintenance?" | Explains sensor data + ML model workflow |
-| "What is Von Mises stress criterion?" | Formula + physical meaning + failure condition |
-| "Explain Carnot efficiency for Th=500K, Tc=300K" | Formula + substitution + η = 40% |
+- a professional hero section
+- chat messages with user and assistant avatars
+- a sidebar with project description, example prompts, and `Clear Chat`
+- a bottom disclaimer reminding users to verify critical calculations
+- a loading spinner during Gemini requests
 
----
+## Architecture Snapshot
 
-## 🛠️ Tech Stack
+```text
+User
+  |
+  v
+Streamlit UI (app.py)
+  |
+  v
+Python app logic
+  |
+  v
+Gemini API (Flash model)
+  |
+  v
+Response rendering + session history
+```
 
-| Layer | Technology | Cost |
+## Technology Stack
+
+| Layer | Technology | Version |
 |---|---|---|
-| Frontend / UI | Streamlit | Free |
-| AI / LLM | Google Gemini 1.5 Flash API | Free (1500 req/day) |
-| Backend | Python 3.10+ | Free |
-| Version Control | GitHub | Free |
-| Hosting | Hugging Face Spaces | Free forever |
-| Secret Management | HF Spaces Secrets | Free |
+| Language | Python | 3.11 runtime, 3.10+ compatible |
+| UI | Streamlit | 1.54.0 |
+| AI SDK | google-generativeai | 0.8.6 |
+| Environment loading | python-dotenv | 1.2.1 |
+| Deployment | Hugging Face Spaces | Docker SDK |
 
-**Total Cost: ₹0**
+## Repository Structure
 
----
-
-## 📁 Project Structure
-
+```text
+MECHMIND-AI/
+|-- app.py
+|-- test_gemini.py
+|-- requirements.txt
+|-- Dockerfile
+|-- .dockerignore
+|-- .env.example
+|-- .gitignore
+|-- README.md
+`-- docs/
+    |-- PROJECT_OVERVIEW.md
+    |-- SYSTEM_DESIGN.md
+    |-- API_REFERENCE.md
+    |-- USER_GUIDE.md
+    |-- DEVELOPMENT_GUIDE.md
+    |-- CHANGELOG.md
+    `-- FUTURE_SCOPE.md
 ```
-mechmind-ai/
-├── app.py                  # Main Streamlit application
-├── requirements.txt        # Python dependencies
-├── README.md               # This file
-└── .gitignore              # Ignore .env and __pycache__
-```
 
----
+## Quick Start
 
-## ⚙️ Run Locally
+### 1. Clone the repository
 
-### 1. Clone the repo
 ```bash
-git clone https://github.com/YOUR_USERNAME/mechmind-ai.git
-cd mechmind-ai
+git clone https://github.com/bharnidhar484-bit/MECHMIND-AI.git
+cd MECHMIND-AI
 ```
 
 ### 2. Install dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Add your Gemini API key
-Get your free key at 👉 https://aistudio.google.com
+### 3. Configure environment variables
 
-Create a `.env` file:
-```
+Create a local `.env` file:
+
+```env
 GEMINI_API_KEY=your_api_key_here
+GEMINI_MODEL=gemini-flash-latest
 ```
 
 ### 4. Run the app
+
 ```bash
 streamlit run app.py
 ```
 
 Open `http://localhost:8501` in your browser.
 
----
+### 5. Optional smoke test
 
-## ☁️ Deploy to Hugging Face Spaces (Free)
-
-1. Go to [huggingface.co/spaces](https://huggingface.co/spaces)
-2. Click **New Space** → Choose **Streamlit** as SDK
-3. Link this GitHub repository
-4. Go to **Settings → Secrets** → Add `GEMINI_API_KEY`
-5. Space auto-deploys and gives you a public URL
-6. Replace `YOUR_USERNAME` in this README with your HF username
-
----
-
-## 💡 Example Questions to Try
-
+```bash
+python test_gemini.py
 ```
-What is the second law of thermodynamics?
-Calculate the heat transfer: k=50 W/mK, A=2m², ΔT=30K, L=0.1m
-What material should I use for a marine environment with high loads?
-Explain how convolutional neural networks are used in quality inspection
+
+## Deployment To Hugging Face Spaces
+
+This repository is prepared for Hugging Face Spaces using the Docker SDK.
+
+### Required Space settings
+
+- SDK: `Docker`
+- App port: `8501`
+- Secret: `GEMINI_API_KEY`
+
+### Deployment flow
+
+1. Create a new Space on Hugging Face.
+2. Select `Docker` as the SDK.
+3. Import or connect this GitHub repository.
+4. Add `GEMINI_API_KEY` in Space Secrets.
+5. Deploy the Space and verify the chat loads correctly.
+
+The container starts Streamlit with:
+
+```bash
+streamlit run app.py --server.port=8501 --server.address=0.0.0.0
+```
+
+## Example Questions
+
+```text
+Explain Bernoulli's theorem with a practical example.
+How do I calculate Reynolds number for pipe flow?
 What is the difference between ductile and brittle fracture?
-How does a digital twin work in manufacturing?
-Solve: A shaft of diameter 40mm transmits 20kW at 500rpm. Find the shear stress.
+How is AI used in predictive maintenance for rotating machinery?
+Recommend a material for a high-temperature turbine blade.
+Solve a torsion problem for a solid circular shaft.
+Compare casting and forging for part manufacturing.
+What is the purpose of factor of safety in machine design?
+Explain the second law of thermodynamics in simple terms.
+What is a digital twin in manufacturing?
 ```
 
----
+## Documentation
 
-## 📊 System Architecture
+Detailed project documentation is available in the [`docs/`](./docs) folder:
 
-```
-User types question
-        ↓
-Streamlit chat interface
-        ↓
-Python backend (prompt engineering)
-        ↓
-Google Gemini API (AI model)
-        ↓
-Response parsed & displayed
-        ↓
-Chat history maintained in session
-```
+- [`PROJECT_OVERVIEW.md`](./docs/PROJECT_OVERVIEW.md)
+- [`SYSTEM_DESIGN.md`](./docs/SYSTEM_DESIGN.md)
+- [`API_REFERENCE.md`](./docs/API_REFERENCE.md)
+- [`USER_GUIDE.md`](./docs/USER_GUIDE.md)
+- [`DEVELOPMENT_GUIDE.md`](./docs/DEVELOPMENT_GUIDE.md)
+- [`CHANGELOG.md`](./docs/CHANGELOG.md)
+- [`FUTURE_SCOPE.md`](./docs/FUTURE_SCOPE.md)
 
----
+## Important Notes
 
-## 🔮 Future Scope
+- The current implementation defaults to `gemini-flash-latest`.
+- Earlier drafts referenced `gemini-1.5-flash`, but that model is no longer the production default in this repository.
+- The application is designed for learning support, not as a substitute for engineering judgment.
+- Critical calculations should always be verified independently.
 
-- [ ] PDF upload — ask questions about uploaded textbook chapters
-- [ ] LaTeX formula rendering in chat
-- [ ] Quiz / MCQ generator for exam prep
-- [ ] Voice input support
-- [ ] Hindi / Telugu / Tamil language support
-- [ ] GATE exam question bank fine-tuning
+## Project Status
 
----
+Current status: `In Development`
 
-## 👨‍💻 Team
+The core chat workflow, Gemini integration, documentation set, and Hugging Face deployment path are in place. Future work includes richer study features such as PDF support, equation rendering, and quiz generation.
 
-| Name | Role |
-|---|---|
-| [Your Name] | Developer & Project Lead |
-| [Friend's Name] | Domain Expert (Mechanical Engineering) |
+## License
 
----
-
-## 📄 License
-
-MIT License — free to use, modify, and distribute.
-
----
-
-<div align="center">
-
-**Built with Python + Streamlit + Google Gemini API**  
-**Deployed free on Hugging Face Spaces**  
-**Total cost: ₹0**
-
-⭐ Star this repo if it helped you!
-
-</div>
+No license file has been added to this repository yet.
