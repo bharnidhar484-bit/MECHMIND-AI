@@ -1,3 +1,15 @@
+---
+title: MechMind AI
+emoji: 🤖
+colorFrom: blue
+colorTo: gray
+sdk: streamlit
+sdk_version: 1.54.0
+app_file: app.py
+pinned: false
+python_version: "3.11"
+---
+
 # 🤖 MechMind AI — Intelligent Mechanical Engineering Assistant
 
 <div align="center">
