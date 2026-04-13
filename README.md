@@ -17,7 +17,7 @@ pinned: false
 <p align="center">
   <a href="https://github.com/bharnidhar484-bit/MECHMIND-AI">GitHub Repository</a>
   |
-  <a href="https://huggingface.co/spaces/YOUR_USERNAME/mechmind-ai">Hugging Face Space</a>
+  <a href="https://huggingface.co/spaces/bharnidhar484/mechmind-ai">Hugging Face Space</a>
 </p>
 
 <p align="center">
@@ -27,8 +27,6 @@ pinned: false
   <img src="https://img.shields.io/badge/Deployment-Hugging_Face_Spaces-FCC624?style=flat-square" alt="Hugging Face Spaces">
   <img src="https://img.shields.io/badge/Status-In_Development-orange?style=flat-square" alt="In Development">
 </p>
-
-<!-- Update the Hugging Face Space URL after the first deployment. -->
 
 ## Overview
 
