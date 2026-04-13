@@ -28,9 +28,66 @@ pinned: false
   <img src="https://img.shields.io/badge/Status-In_Development-orange?style=flat-square" alt="In Development">
 </p>
 
+<p align="center">
+  <a href="https://huggingface.co/spaces/bharnidhar484/mechmind-ai"><strong>Launch Live App</strong></a>
+  |
+  <a href="./docs/USER_GUIDE.md"><strong>User Guide</strong></a>
+  |
+  <a href="./docs/SYSTEM_DESIGN.md"><strong>System Design</strong></a>
+</p>
+
 ## Overview
 
 MechMind AI is a Streamlit-based chatbot built for mechanical engineering students and early-career engineers. It uses the Gemini API to answer questions across thermodynamics, fluid mechanics, machine design, manufacturing, materials, and AI applications in mechanical engineering. The application is intentionally scoped to this domain so that responses stay relevant, structured, and academically useful.
+
+## Live Preview
+
+<p align="center">
+  <a href="https://huggingface.co/spaces/bharnidhar484/mechmind-ai">
+    <img src="./assets/readme/app-home.png" alt="MechMind AI live homepage" width="100%">
+  </a>
+</p>
+
+<p align="center">
+  <em>Click the preview to open the live chatbot on Hugging Face Spaces.</em>
+</p>
+
+<details>
+<summary><strong>Open interaction walkthrough</strong></summary>
+<br>
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="./assets/readme/question-in-progress.png">
+        <img src="./assets/readme/question-in-progress.png" alt="Question submitted in MechMind AI" width="100%">
+      </a>
+      <p><strong>Question input</strong><br>Mechanical engineering question submitted to the chatbot.</p>
+    </td>
+    <td width="50%" valign="top">
+      <a href="./assets/readme/response-section-1.png">
+        <img src="./assets/readme/response-section-1.png" alt="Response section 1" width="100%">
+      </a>
+      <p><strong>Structured response</strong><br>The answer starts with foundations and core laws.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="./assets/readme/response-section-2.png">
+        <img src="./assets/readme/response-section-2.png" alt="Response section 2" width="100%">
+      </a>
+      <p><strong>Concept breakdown</strong><br>Generated content is formatted for readability and revision.</p>
+    </td>
+    <td width="50%" valign="top">
+      <a href="./assets/readme/response-section-3.png">
+        <img src="./assets/readme/response-section-3.png" alt="Response section 3" width="100%">
+      </a>
+      <p><strong>Applied context</strong><br>The model links theory back to mechanical engineering use cases.</p>
+    </td>
+  </tr>
+</table>
+
+</details>
 
 ## Why This Project Exists
 
@@ -108,6 +165,13 @@ MECHMIND-AI/
 |-- .env.example
 |-- .gitignore
 |-- README.md
+|-- assets/
+|   `-- readme/
+|       |-- app-home.png
+|       |-- question-in-progress.png
+|       |-- response-section-1.png
+|       |-- response-section-2.png
+|       `-- response-section-3.png
 `-- docs/
     |-- PROJECT_OVERVIEW.md
     |-- SYSTEM_DESIGN.md
